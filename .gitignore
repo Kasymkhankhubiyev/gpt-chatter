@@ -2,3 +2,5 @@
 .streamlit
 
 *.DS_Store
+
+*.cpython*
