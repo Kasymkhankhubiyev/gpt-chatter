@@ -17,6 +17,11 @@ async def run():
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
+    refresh_chat = st.sidebar.button("Refresh Chat")
+
+    if refresh_chat:
+        st.session_state.messages = []
+
     # client = Agent(st.session_state.messages)
     client = AsyncOpenAI(
         api_key=st.secrets["OPENAI_API_KEY"], base_url=st.secrets["OPENAI_BASE_URL"]
